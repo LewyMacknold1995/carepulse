@@ -37,7 +37,7 @@ const PatientForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
-      <section className="mb-12 space-y-4">
+        <section className="mb-12 space-y-4">
           <h1 className="header">Hi there 👋</h1>
           <p className="text-dark-700">Get started with appointments.</p>
         </section>
@@ -52,10 +52,27 @@ const PatientForm = () => {
           iconAlt="user"
         />
 
-      <Button type="submit">Submit</Button>
-    </form>
-  </Form>
-  )
-}
+        <CustomFormField
+          fieldType={FormFieldType.INPUT}
+          control={form.control}
+          name="email"
+          label="Email"
+          placeholder="johndoe@gmail.com"
+          iconSrc="/assets/icons/email.svg"
+          iconAlt="email"
+        />
+
+        <CustomFormField
+          fieldType={FormFieldType.PHONE_INPUT}
+          control={form.control}
+          name="phone"
+          label="Phone number"
+          placeholder="(555) 123-4567"
+        />
+
+      </form>
+    </Form>
+  );
+};
 
 export default PatientForm

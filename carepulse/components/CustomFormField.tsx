@@ -29,8 +29,19 @@ interface CustomProps {
     fieldType: FormFieldType;
   }
 
-const CustomFormField = ({control, fieldType, name, label }: CustomProps ) => {
-  return (
+const RenderField = ({field, props}: {field: any; props: CustomProps}) => {
+    return (
+        <Input
+            type="text"
+            placeholder="John Doe"
+        />
+    )
+}
+
+const CustomFormField = (props: CustomProps) => {
+    const { control, fieldType, name, label } = props;
+    
+    return (
     <FormField
     control={control}
     name={name}
@@ -39,6 +50,12 @@ const CustomFormField = ({control, fieldType, name, label }: CustomProps ) => {
             {fieldType !== FormFieldType.CHECKBOX && label && (
                 <FormLabel>{label}</FormLabel>
             )}
+
+            <RenderField field={field} props={props}/> 
+
+            <FormMessage className="shad-error" />
+
+        
 
         </FormItem>
 
