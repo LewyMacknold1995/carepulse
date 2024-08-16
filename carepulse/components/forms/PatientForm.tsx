@@ -70,7 +70,7 @@ const PatientForm = () => {
           placeholder="(555) 123-4567"
         />
 
-      </form>
+        </form>
     </Form>
   );
 };
