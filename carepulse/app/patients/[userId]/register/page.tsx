@@ -2,11 +2,8 @@ import Image from "next/image";
 
 import RegisterForm from "@/components/forms/RegisterForm";
 
-const Register = async ({ params: { userId } }: SearchParamProps) => {
-//   const user = await getUser(userId);
-//   const patient = await getPatient(userId);
+const Register = () => {
 
-//   if (patient) redirect(`/patients/${userId}/new-appointment`);
 
   return (
     <div className="flex h-screen max-h-screen">
