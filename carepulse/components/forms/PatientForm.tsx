@@ -27,38 +27,27 @@ export const PatientForm = () => {
     },
   });
 
-    async function onSubmit({ name, email, phone }: z.infer<typeof UserFormValidation>) {
-      setIsLoading(true);
-      try {
-        const userData = { name, email, phone };
-        const user = await createUser(userData);
+  const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
+    setIsLoading(true);
 
-        if(user) router.push(`/patients/${user.$id}/register`)
-      } catch (error) {
-    console.log(error);
+    try {
+      const user = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+      };
+
+      const newUser = await createUser(user);
+
+      if (newUser) {
+        router.push(`/patients/${newUser.$id}/register`);
+      }
+    } catch (error) {
+      console.log(error);
     }
-  }
-  // const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
-  //   setIsLoading(true);
 
-  //   try {
-  //     const user = {
-  //       name: values.name,
-  //       email: values.email,
-  //       phone: values.phone,
-  //     };
-
-  //     const newUser = await createUser(user);
-
-  //     if (newUser) {
-  //       router.push(`/patients/${newUser.$id}/register`);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-
-  //   setIsLoading(false);
-  // };
+    setIsLoading(false);
+  };
 
   return (
     <Form {...form}>
