@@ -36,8 +36,8 @@ export const PatientForm = () => {
         if(user) router.push(`/patients/${user.$id}/register`)
       } catch (error) {
     console.log(error);
+    }
   }
-    };
   // const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
   //   setIsLoading(true);
 
