@@ -177,6 +177,12 @@ export const RegisterForm = ({user} : {user: User }) => {
             />
           </div>
 
+          <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Medical Information</h2>
+          </div>
+          </section>
+
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>
