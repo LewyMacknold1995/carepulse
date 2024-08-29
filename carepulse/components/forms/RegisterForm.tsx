@@ -291,6 +291,14 @@ export const RegisterForm = ({user} : {user: User }) => {
             ))}
           </CustomFormField>
 
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="identificationNumber"
+            label="Identification Number"
+            placeholder="123456789"
+          />
+
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>
