@@ -271,6 +271,26 @@ export const RegisterForm = ({user} : {user: User }) => {
             />
           </div>
 
+          <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Identification and Verfication</h2>
+          </div>
+          </section>
+
+          <CustomFormField
+            fieldType={FormFieldType.SELECT}
+            control={form.control}
+            name="identificationType"
+            label="Identification Type"
+            placeholder="Select identification type"
+          >
+            {IdentificationTypes.map((type, i) => (
+              <SelectItem key={type + i} value={type}>
+                {type}
+              </SelectItem>
+            ))}
+          </CustomFormField>
+
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>
