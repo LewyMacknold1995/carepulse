@@ -214,6 +214,25 @@ export const RegisterForm = ({user} : {user: User }) => {
             ))}
           </CustomFormField>
 
+            {/* INSURANCE & POLICY NUMBER */}
+            <div className="flex flex-col gap-6 xl:flex-row">
+            <CustomFormField
+              fieldType={FormFieldType.INPUT}
+              control={form.control}
+              name="insuranceProvider"
+              label="Insurance provider"
+              placeholder="BlueCross BlueShield"
+            />
+
+            <CustomFormField
+              fieldType={FormFieldType.INPUT}
+              control={form.control}
+              name="insurancePolicyNumber"
+              label="Insurance policy number"
+              placeholder="ABC123456789"
+            />
+          </div>
+
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>
