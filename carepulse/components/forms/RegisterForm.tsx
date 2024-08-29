@@ -158,6 +158,25 @@ export const RegisterForm = ({user} : {user: User }) => {
             />
           </div>
 
+            {/* Emergency Contact Name & Emergency Contact Number */}
+            <div className="flex flex-col gap-6 xl:flex-row">
+            <CustomFormField
+              fieldType={FormFieldType.INPUT}
+              control={form.control}
+              name="emergencyContactName"
+              label="Emergency contact name"
+              placeholder="Guardian's name"
+            />
+
+            <CustomFormField
+              fieldType={FormFieldType.PHONE_INPUT}
+              control={form.control}
+              name="emergencyContactNumber"
+              label="Emergency contact number"
+              placeholder="(555) 123-4567"
+            />
+          </div>
+
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>
