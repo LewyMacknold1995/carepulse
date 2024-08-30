@@ -16,7 +16,6 @@ import {
   Doctors,
   GenderOptions,
   IdentificationTypes,
-  PatientFormDefaultValues,
 } from "@/constants";
 import { SelectItem } from "@/components/ui/select";
 import { FileUploader } from "../FileUploader";
