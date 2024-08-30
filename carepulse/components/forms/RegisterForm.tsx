@@ -298,18 +298,18 @@ export const RegisterForm = ({ user }: { user: User }) => {
         />
 
         <CustomFormField
-            fieldType={FormFieldType.SKELETON}
-            control={form.control}
-            name="identificationDocument"
-            label="Scanned Copy of Identification Document"
-            renderSkeleton={(field) => (
-              <FormControl>
-                <FileUploader files={field.value} onChange={field.onChange} />
-              </FormControl>
-            )}
-          />
+          fieldType={FormFieldType.SKELETON}
+          control={form.control}
+          name="identificationDocument"
+          label="Scanned Copy of Identification Document"
+          renderSkeleton={(field) => (
+            <FormControl>
+              <FileUploader files={field.value} onChange={field.onChange} />
+            </FormControl>
+          )}
+        />
 
-          <section className="space-y-6">
+        <section className="space-y-6">
           <div className="mb-9 space-y-1">
             <h2 className="sub-header">Consent and Privacy</h2>
           </div>
