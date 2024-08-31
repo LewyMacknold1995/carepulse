@@ -115,4 +115,4 @@ export function getAppointmentSchema(type: string) {
     default:
       return ScheduleAppointmentSchema;
   }
-}
+} 
