@@ -9,10 +9,7 @@ import { z } from "zod";
 
 import { SelectItem } from "@/components/ui/select";
 import { Doctors } from "@/constants";
-import {
-  createAppointment,
-  updateAppointment,
-} from "@/lib/actions/appointment.actions";
+import { createAppointment } from "@/lib/actions/appointment.actions"; 
 import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 
@@ -103,12 +100,13 @@ export const AppointmentForm = ({
           type,
         };
 
-        const updatedAppointment = await updateAppointment(appointmentToUpdate);
+        // Commented out the updating of an appointment
+        // const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
-        if (updatedAppointment) {
-          setOpen && setOpen(false);
-          form.reset();
-        }
+        // if (updatedAppointment) {
+        //   setOpen && setOpen(false);
+        //   form.reset();
+        // }
       }
     } catch (error) {
       console.log(error);
@@ -125,7 +123,7 @@ export const AppointmentForm = ({
       buttonLabel = "Schedule Appointment";
       break;
     default:
-      buttonLabel = "Submit Apppointment";
+      buttonLabel = "Submit Appointment";
   }
 
   return (
@@ -182,7 +180,7 @@ export const AppointmentForm = ({
                 control={form.control}
                 name="reason"
                 label="Appointment reason"
-                placeholder="Annual montly check-up"
+                placeholder="Annual monthly check-up"
                 disabled={type === "schedule"}
               />
 
