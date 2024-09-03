@@ -100,7 +100,6 @@ export const AppointmentForm = ({
           type,
         };
 
-        // Commented out the updating of an appointment
         // const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
         // if (updatedAppointment) {
