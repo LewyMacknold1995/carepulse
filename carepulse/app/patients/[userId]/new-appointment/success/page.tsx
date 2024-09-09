@@ -6,7 +6,7 @@ import { Doctors } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { formatDateTime } from "@/lib/utils";
 
-const Success = async ({
+const RequestSuccess = async ({
   searchParams,
   params: { userId },
 }: SearchParamProps) => {
@@ -18,8 +18,8 @@ const Success = async ({
   );
 
   return (
-    <div className="flex h-screen max-h-screen px-[5%]">
-        <div className="success-img">
+    <div className=" flex h-screen max-h-screen px-[5%]">
+      <div className="success-img">
         <Link href="/">
           <Image
             src="/assets/icons/logo-full.svg"
@@ -44,9 +44,39 @@ const Success = async ({
           <p>We&apos;ll be in touch shortly to confirm.</p>
         </section>
 
-        </div>
-    </div>
-  )
-}
+        <section className="request-details">
+          <p>Requested appointment details: </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src={doctor?.image!}
+              alt="doctor"
+              width={100}
+              height={100}
+              className="size-6"
+            />
+            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+          </div>
+          <div className="flex gap-2">
+            <Image
+              src="/assets/icons/calendar.svg"
+              height={24}
+              width={24}
+              alt="calendar"
+            />
+            <p> {formatDateTime(appointment.schedule).dateTime}</p>
+          </div>
+        </section>
 
-export default Success
+        <Button variant="outline" className="shad-primary-btn" asChild>
+          <Link href={`/patients/${userId}/new-appointment`}>
+            New Appointment
+          </Link>
+        </Button>
+
+        <p className="copyright">© 2024 CarePluse</p>
+      </div>
+    </div>
+  );
+};
+
+export default RequestSuccess;
