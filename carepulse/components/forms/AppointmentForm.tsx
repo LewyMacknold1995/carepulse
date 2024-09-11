@@ -9,7 +9,7 @@ import { z } from "zod";
 
 import { SelectItem } from "@/components/ui/select";
 import { Doctors } from "@/constants";
-import { createAppointment } from "@/lib/actions/appointment.actions"; 
+import { createAppointment } from "@/lib/actions/appointment.actions";
 import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 
@@ -51,7 +51,7 @@ export const AppointmentForm = ({
   });
 
   const onSubmit = async (
-    values: z.infer<typeof AppointmentFormValidation>
+    values: z.infer<typeof AppointmentFormValidation>,
   ) => {
     setIsLoading(true);
 
@@ -84,7 +84,7 @@ export const AppointmentForm = ({
         if (newAppointment) {
           form.reset();
           router.push(
-            `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
+            `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`,
           );
         }
       } else {

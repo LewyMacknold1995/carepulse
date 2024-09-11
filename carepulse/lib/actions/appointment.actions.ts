@@ -12,22 +12,22 @@ import { formatDateTime, parseStringify } from "../utils";
 
 //  CREATE APPOINTMENT
 export const createAppointment = async (
-    appointment: CreateAppointmentParams
-  ) => {
-    try {
-      const newAppointment = await databases.createDocument(
-        DATABASE_ID!,
-        APPOINTMENT_COLLECTION_ID!,
-        ID.unique(),
-        appointment
-      );
-  
-      revalidatePath("/admin");
-      return parseStringify(newAppointment);
-    } catch (error) {
-      console.error("An error occurred while creating a new appointment:", error);
-    }
-  };
+  appointment: CreateAppointmentParams,
+) => {
+  try {
+    const newAppointment = await databases.createDocument(
+      DATABASE_ID!,
+      APPOINTMENT_COLLECTION_ID!,
+      ID.unique(),
+      appointment,
+    );
+
+    revalidatePath("/admin");
+    return parseStringify(newAppointment);
+  } catch (error) {
+    console.error("An error occurred while creating a new appointment:", error);
+  }
+};
 
 // GET RECENT APPOINTMENTS
 export const getAppointment = async (appointmentId: string) => {
@@ -35,7 +35,7 @@ export const getAppointment = async (appointmentId: string) => {
     const appointment = await databases.getDocument(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      appointmentId
+      appointmentId,
     );
 
     return parseStringify(appointment);
