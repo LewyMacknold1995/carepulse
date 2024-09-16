@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 import { ID, Query } from "node-appwrite";
 import { Appointment } from "@/types/appwrite.types";
 
-
 import {
   APPOINTMENT_COLLECTION_ID,
   DATABASE_ID,
@@ -52,7 +51,7 @@ export const getRecentAppointmentList = async () => {
     const appointments = await databases.listDocuments(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      [Query.orderDesc("$createdAt")]
+      [Query.orderDesc("$createdAt")],
     );
 
     const initialCounts = {
@@ -76,7 +75,7 @@ export const getRecentAppointmentList = async () => {
         }
         return acc;
       },
-      initialCounts
+      initialCounts,
     );
 
     const data = {
@@ -89,7 +88,7 @@ export const getRecentAppointmentList = async () => {
   } catch (error) {
     console.error(
       "An error occurred while retrieving the recent appointments:",
-      error
+      error,
     );
   }
 };

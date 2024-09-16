@@ -3,9 +3,8 @@ import Link from "next/link";
 import { PatientForm } from "@/components/forms/PatientForm";
 import { PasskeyModal } from "@/components/PasskeyModal";
 
-
-export default function Home({ searchParams}: SearchParamProps) {
-  const isAdmin = searchParams.admin === 'true';
+export default function Home({ searchParams }: SearchParamProps) {
+  const isAdmin = searchParams.admin === "true";
   return (
     <div className="flex h-screen max-h-screen">
       {isAdmin && <PasskeyModal />}
