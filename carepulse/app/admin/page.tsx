@@ -2,22 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { StatCard } from "@/components/StatCard";
-import { columns, Payment } from "@/components/table/columns";
+import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
-
-async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    // ...
-  ]
-}
 
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
