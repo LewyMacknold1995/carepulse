@@ -100,7 +100,7 @@ export const AppointmentForm = ({
           type,
         };
 
-        // const updatedAppointment = await updateAppointment(appointmentToUpdate);
+        const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
         // if (updatedAppointment) {
         //   setOpen && setOpen(false);

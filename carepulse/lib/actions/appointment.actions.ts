@@ -92,3 +92,22 @@ export const getRecentAppointmentList = async () => {
     );
   }
 };
+
+//  UPDATE APPOINTMENT
+export const updateAppointment = async ({
+  appointmentId,
+  userId,
+   appointment,
+  type,
+}: UpdateAppointmentParams) => {
+  try {
+    const updatedAppointment = await databases.updateDocument(
+      DATABASE_ID!,
+      APPOINTMENT_COLLECTION_ID!,
+      appointmentId,
+      appointment
+    )
+  } catch (error) {
+    console.error("An error occurred while scheduling an appointment:", error);
+  }
+};
