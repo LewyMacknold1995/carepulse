@@ -103,10 +103,10 @@ export const AppointmentForm = ({
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
-        // if (updatedAppointment) {
-        //   setOpen && setOpen(false);
-        //   form.reset();
-        // }
+        if (updatedAppointment) {
+          setOpen && setOpen(false);
+          form.reset();
+        }
       }
     } catch (error) {
       console.log(error);
