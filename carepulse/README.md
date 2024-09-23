@@ -110,7 +110,7 @@ Open `http://localhost:3000` in your browser to view the project.
 
 ---
 
-Feel free to contribute or connect with me on **[LinkedIn](https://www.linkedin.com/in/your-profile)** for more exciting projects! Let's create something amazing in the dark 🕸️🌑.
+Feel free to contribute or connect with me on **[LinkedIn](https://www.linkedin.com/in/lewymacknold)** for more exciting projects! Let's create something amazing in the dark 🕸️🌑.
 
 ---
 
